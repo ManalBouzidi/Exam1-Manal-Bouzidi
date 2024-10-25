@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.2">
+    <persistence-unit name="cinethequePU" transaction-type="JTA">
+        <!-- Ajouter les entités ici -->
+        <class>model.Media</class>
+        <class>model.Utilisateur</class>
+        <class>model.Emprunt</class>
+
+        <!-- Configuration de la base de données -->
+        <properties>
+            <!-- Connexion à la base de données -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:~/test"/>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+
+            <!-- Création automatique des tables -->
+            <property name="javax.persistence.schema-generation.database.action" value="create"/>
+        </properties>
+    </persistence-unit>
+</persistence>
